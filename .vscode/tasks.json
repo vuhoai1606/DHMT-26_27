@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build OpenGL Project (g++)",
+            "command": "g++",
+            "args": [
+                "-std=c++11",
+                "-O2",
+                "-I${workspaceFolder}/src",
+                "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/Window.cpp",
+                "${workspaceFolder}/src/Camera.cpp",
+                "${workspaceFolder}/src/Shapes.cpp",
+                "-o",
+                "${workspaceFolder}/bin/DHMT_OpenGL.exe",
+                "-lopengl32",
+                "-lglu32",
+                "-lgdi32",
+                "-luser32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Bien dich toan bo du an DHMT OpenGL su dung MinGW GCC"
+        },
+        {
+            "type": "shell",
+            "label": "Run OpenGL Project",
+            "command": "${workspaceFolder}/bin/DHMT_OpenGL.exe",
+            "dependsOn": "Build OpenGL Project (g++)",
+            "problemMatcher": [],
+            "group": "none"
+        }
+    ]
+}
