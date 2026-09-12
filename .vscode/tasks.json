@@ -3,18 +3,17 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Build OpenGL Project (g++)",
+            "label": "Build Lab 1 OpenGL (g++)",
             "command": "g++",
             "args": [
                 "-std=c++11",
                 "-O2",
-                "-I${workspaceFolder}/src",
-                "${workspaceFolder}/src/main.cpp",
-                "${workspaceFolder}/src/Window.cpp",
-                "${workspaceFolder}/src/Camera.cpp",
-                "${workspaceFolder}/src/Shapes.cpp",
+                "-I${workspaceFolder}/src/Lab1",
+                "${workspaceFolder}/src/Lab1/main.cpp",
+                "${workspaceFolder}/src/Lab1/Window.cpp",
+                "${workspaceFolder}/src/Lab1/Algorithms.cpp",
                 "-o",
-                "${workspaceFolder}/bin/DHMT_OpenGL.exe",
+                "${workspaceFolder}/bin/Lab1_OpenGL.exe",
                 "-lopengl32",
                 "-lglu32",
                 "-lgdi32",
@@ -28,15 +27,33 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Bien dich toan bo du an DHMT OpenGL su dung MinGW GCC"
+            "detail": "Bien dich Lab 1 (Bresenham & Midpoint)"
         },
         {
             "type": "shell",
-            "label": "Run OpenGL Project",
-            "command": "${workspaceFolder}/bin/DHMT_OpenGL.exe",
-            "dependsOn": "Build OpenGL Project (g++)",
-            "problemMatcher": [],
-            "group": "none"
+            "label": "Build Lab 0 OpenGL (g++)",
+            "command": "g++",
+            "args": [
+                "-std=c++11",
+                "-O2",
+                "-I${workspaceFolder}/src/Lab0",
+                "${workspaceFolder}/src/Lab0/main.cpp",
+                "${workspaceFolder}/src/Lab0/Window.cpp",
+                "${workspaceFolder}/src/Lab0/Camera.cpp",
+                "${workspaceFolder}/src/Lab0/Shapes.cpp",
+                "-o",
+                "${workspaceFolder}/bin/Lab0_OpenGL.exe",
+                "-lopengl32",
+                "-lglu32",
+                "-lgdi32",
+                "-luser32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "Bien dich Lab 0 (Vat the 2D & 3D)"
         }
     ]
 }

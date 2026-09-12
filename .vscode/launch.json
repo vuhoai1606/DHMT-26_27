@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug DHMT OpenGL (GDB)",
+            "name": "Debug Lab 1 (Bresenham & Midpoint)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bin/DHMT_OpenGL.exe",
+            "program": "${workspaceFolder}/bin/Lab1_OpenGL.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -20,7 +20,28 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Build OpenGL Project (g++)"
+            "preLaunchTask": "Build Lab 1 OpenGL (g++)"
+        },
+        {
+            "name": "Debug Lab 0 (Vat the 2D & 3D)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/Lab0_OpenGL.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build Lab 0 OpenGL (g++)"
         }
     ]
 }
