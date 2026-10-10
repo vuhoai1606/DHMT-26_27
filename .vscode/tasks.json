@@ -3,6 +3,61 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "Build Lab 2 OpenGL (g++)",
+            "command": "g++",
+            "args": [
+                "-std=c++11",
+                "-O2",
+                "-I${workspaceFolder}/src/Lab2",
+                "${workspaceFolder}/src/Lab2/main.cpp",
+                "${workspaceFolder}/src/Lab2/Window.cpp",
+                "${workspaceFolder}/src/Lab2/Clipping.cpp",
+                "${workspaceFolder}/src/Lab2/Filling.cpp",
+                "-o",
+                "${workspaceFolder}/bin/Lab2_OpenGL.exe",
+                "-lopengl32",
+                "-lglu32",
+                "-lgdi32",
+                "-luser32",
+                "-Wl,--stack,67108864"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Bien dich Lab 2 (Xen hinh Cohen/Midpoint & To mau Boundary/Scanline)"
+        },
+        {
+            "type": "shell",
+            "label": "Build Lab 3 OpenGL (g++)",
+            "command": "g++",
+            "args": [
+                "-std=c++11",
+                "-O2",
+                "-I${workspaceFolder}/src/Lab3",
+                "${workspaceFolder}/src/Lab3/main.cpp",
+                "${workspaceFolder}/src/Lab3/Window.cpp",
+                "${workspaceFolder}/src/Lab3/Transform2D.cpp",
+                "-o",
+                "${workspaceFolder}/bin/Lab3_OpenGL.exe",
+                "-lopengl32",
+                "-lglu32",
+                "-lgdi32",
+                "-luser32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "Bien dich Lab 3 (Bien doi 2D: Tinh tien, Ti le, Quay, Doi xung y=ax+b)"
+        },
+        {
+            "type": "shell",
             "label": "Build Lab 1 OpenGL (g++)",
             "command": "g++",
             "args": [
@@ -23,10 +78,7 @@
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": ["$gcc"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "detail": "Bien dich Lab 1 (Bresenham & Midpoint)"
         },
         {
